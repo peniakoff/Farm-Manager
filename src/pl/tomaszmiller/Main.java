@@ -14,19 +14,20 @@ import java.util.Scanner;
 
 public class Main {
 
-	private List<Barn> barnsList = new ArrayList<>();
-	private List<Animal> animalsList = new ArrayList<>();
+	public List<Barn> barnsList = new ArrayList<>();
+	public List<Animal> animalsList = new ArrayList<>();
 	private Scanner scanner = new Scanner(System.in);
-	private String ANSI_GREEN = "\u001B[32m";
-	private String ANSI_RED = "\u001B[31m";
-	private String ANSI_RESET = "\u001B[0m";
+	public String ANSI_GREEN = "\u001B[32m";
+	public String ANSI_RED = "\u001B[31m";
+	public String ANSI_RESET = "\u001B[0m";
 
 	public static void main(String[] args) {
 		Main app = new Main();
-		System.out.println(app.welcome());
+		Menu menu = new Menu();
+		System.out.println(menu.welcome());
 
 		do {
-			System.out.println(app.showMenu());
+			System.out.println(menu.showMenu());
 			System.out.print("Input the number of your choice: ");
 			System.out.println();
 			int operator;
@@ -118,7 +119,7 @@ public class Main {
 		int barnId = typeInt(scanner.next());
 		Animal animal = new Animal(id, type, sex, birthday, barnId);
 		animalsList.add(animal);
-		System.out.println("New animal was added to barn with ID number " + barnId + "!");
+		System.out.println("New animal (" + type + ") was added to barn " + barnsList.get(animal.getBarnIndex() - 1).getBarnName() + ".");
 	}
 
 	public void removeAnimal() {
@@ -129,7 +130,7 @@ public class Main {
 		System.out.println("\nYour animals:");
 		int i = 1;
 		for (Animal animal : animalsList){
-			System.out.println("(" + ANSI_GREEN + (i++) + ANSI_RESET + ") Animal ID: " + animal.getId() + ", Type: " + ANSI_RED + animal.getType() + ANSI_RESET + ", Sex: " + animal.getSex() + ", Birthday: " + animal.getBirthDate() + ", Added: " + animal.getAddDate() + ", Name of the animal's barn: ");
+			System.out.println("(" + ANSI_GREEN + (i++) + ANSI_RESET + ") Animal ID: " + animal.getId() + ", Type: " + ANSI_RED + animal.getType() + ANSI_RESET + ", Sex: " + animal.getSex() + ", Birthday: " + animal.getBirthDate() + ", Added: " + animal.getAddDate() + ", Name of the animal's barn: " + barnsList.get(animal.getBarnIndex() - 1).getBarnName());
 		}
 		System.out.print("\nWhich of one animal would you remove? ");
 		animalsList.remove(typeInt(scanner.next()) - 1);

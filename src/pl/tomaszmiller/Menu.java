@@ -6,11 +6,13 @@ package pl.tomaszmiller;
 
 public class Menu {
 
+	Main app = new Main();
+
 	public String welcome() {
 		return "------------------------------------------------\n" +
-				"------" + ANSI_GREEN + " The master's eye fattens the horse " + ANSI_RESET + "------\n" +
+				"------" + app.ANSI_GREEN + " The master's eye fattens the horse " + app.ANSI_RESET + "------\n" +
 				"------------------------------------------------\n" +
-				ANSI_GREEN + " Welcome in the application to menage your farm \n" + ANSI_RESET +
+				app.ANSI_GREEN + " Welcome in the application to menage your farm \n" + app.ANSI_RESET +
 				"------------------------------------------------";
 	}
 
@@ -24,7 +26,7 @@ public class Menu {
 				"(6) show the youngest animal\n" +
 				"(7) show the most animal species\n\n" +
 				"(8) close the application\n\n" +
-				((animalsList.size() > 0) ? "Currently number of your animals: " + animalsList.size() + "\n" : "You don't have animals for this moment!\n");
+				((app.animalsList.size() > 0) ? "Currently number of your animals: " + app.animalsList.size() + "\n" : "You don't have animals for this moment!\n");
 	}
 
 }
