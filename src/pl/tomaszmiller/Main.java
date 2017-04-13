@@ -137,13 +137,13 @@ public class Main {
 		System.out.print("\nThe animal was successful removed!\n");
 	}
 
-/*	public String oldestAnimal() {
-
-	}
-
-	public String youngestAnimal() {
-
-	}*/
+//	public String oldestAnimal() {
+//
+//	}
+//
+//	public String youngestAnimal() {
+//
+//	}
 
 	public void mostAnimalSpecies() {
 		String mostAnimal = null;
