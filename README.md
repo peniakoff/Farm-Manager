@@ -7,5 +7,5 @@ In the app you can:
 * remove animal
 * view the most common animal
 
----
-Development version
+--
+_Development version_
