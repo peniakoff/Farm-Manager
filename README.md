@@ -6,3 +6,6 @@ In the app you can:
 * add animal to the barn
 * remove animal
 * view the most common animal
+
+---
+Development version
